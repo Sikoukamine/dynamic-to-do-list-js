@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove";
-        removeButton.className = 'remove-btn';
+        
+        // Add class using classList.add
+        removeButton.classList.add('remove-btn'); // Use classList to add class
 
         // Remove task on button click
         removeButton.addEventListener('click', () => {
@@ -47,8 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLocalStorage();
         });
 
+        // Append the remove button to the li element
         li.appendChild(removeButton);
+        
+        // Append the li to taskList
         taskList.appendChild(li);
+
+        // Clear input field
         taskInput.value = ""; // Clear input field
 
         // Save to localStorage
